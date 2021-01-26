@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Base Elements */
+
+h2 {
+  font-size: 1.25em;
+  color: #505050;
+  text-align: center;
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+
+h3 {
+  font-size: 1em;
+  color: #505050;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Positioning */
+
+.center-vh {
+  display: grid;
+  place-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.fixed-u-l {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Background Colors */
+
+.bg-white {
+  background-color: #FFFFFF;
+}
+
+.bg-dblue {
+  background-color: #9F9FFF;
+}
+
+.bg-lblue {
+  background-color: #D7D5FF;
+}
+
+.bg-lblue-hov:hover {
+  background-color: #D7D5FF;
+}
+
+.bg-gray {
+  background-color: #909090;
+}
+
+.bg-gray-a:active {
+  background-color: #909090;
+}
+
+.bg-yellow {
+  background-color: #FFFCCC;
+}
+
+.bg-red {
+  background-color: #FFB7B7;
+}
+
+.bg-accept {
+  background-color: #61EB61;
+}
+
+.bg-reject {
+  background-color: #FD6C6C;
+}
+
+.bg-haze {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bg-none {
+  background-color: transparent;
+}
+
+/* Overflows */
+
+.scroll-y {
+  overflow: auto;
+}
+
+/* Text */
+
+.text-white {
+  color: #FFFFFF
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Width and Height */
+
+.w-100 {
+  width: 100%;
+}
+
+.w-83 {
+  width: 83%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-35 {
+  width: 35%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.w-15 {
+  width: 15%;
+}
+
+.w-5 {
+  width: 5%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.h-75 {
+  height: 75%;
+}
+
+.h-50 {
+  height: 50%;
+}
+
+/* Flex */
+
+.f-down {
+  flex-direction: column;
+}
+
+.f-across {
+  flex-direction: row;
+}
+
+.f-center {
+  place-items: center;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
+}
+
+.f-j-spacebetween {
+  justify-content: space-between;
+}
+
+.f-j-spacearound {
+  justify-content: space-around;
+}
+
+.f-j-center {
+  justify-content: center;
+}
+
+.f-ac-stretch {
+  align-content: space-around;
+}
+
+.f-ai-center {
+  align-items: center;
+}
+
+.f-grow {
+  flex-grow: 1;
+}
+
+.f-grow-3 {
+  flex-grow: 3;
+}
+
+/* Margins */
+
+.mb-05 {
+  margin-bottom: 0.5em;
+}
+
+.mt-05 {
+  margin-top: 0.5em;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+/* Borders */
+
+.br-30 {
+  border-radius: 30px;
+}
+
+.br-15 {
+  border-radius: 15px;
+}
+
+.br-1 {
+  border-radius: 1px;
+}
+
+.l-round {
+  border-radius: 15px 0 0 15px;
+}
+
+.r-round {
+  border-radius: 0 15px 15px 0;
+}
+
+.b-none {
+  border: none;
+}
+
+/* Padding */
+
+.p-025 {
+  padding: 0.25em;
+}
+
+.p-r-1 {
+  padding-right: 1em;
+}
+
+.p-l-1 {
+  padding-left: 1em;
+}
+
+.p-t-1 {
+  padding-top: 1em;
+}
+
+.p-b-1 {
+  padding-bottom: 1em;
+}
+
+.p-r-15 {
+  padding-right: 1.5em;
+}
+
+.p-l-025 {
+  padding-left: 0.25em;
+}
+
+/* utility */
+
+.cw {
+  visibility: hidden;
+}
+
+.display-none {
+  display: none;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+/* SCREEN SIZE SPECIFIC */
+
+@media screen and (max-width: 700px) {
+  .show-tablet {
+    display: none;
+  }
+  .show-mobile {
+    display: auto;
+  }
+  .padding-mobile {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  h1 {
+    font-size: 4vw;
+    color: #505050;
+    font-weight: bold;
+    text-align: center;
+    padding-top: .25em;
+    padding-bottom: .25em;
+  }
+  .toggle-mobile-a {
+    display: auto;
+  }
+  
+  .toggle-mobile-b {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 900px) {
+  .show-tablet {
+    display: auto;
+  }
+  .show-mobile {
+    display: none;
+  }
+  h1 {
+    font-size: 1.75em;
+    color: #505050;
+    font-weight: bold;
+    text-align: center;
+    padding-top: .25em;
+    padding-bottom: .25em;
+  }
+  .toggle-mobile-a {
+    display: auto;
+  }
+  
+  .toggle-mobile-b {
+    display: auto;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .show-tablet {
+    display: none;
+  }
+
+  .show-mobile {
+    display: none;
+  }
+
+  .toggle-mobile-a {
+    display: auto;
+  }
+
+  .toggle-mobile-b {
+    display: auto;
+  }
+
+  h1 {
+    font-size: 1.75em;
+    color: #505050;
+    font-weight: bold;
+    text-align: center;
+    padding-top: .25em;
+    padding-bottom: .25em;
+  }
+}

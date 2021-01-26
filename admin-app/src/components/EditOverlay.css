@@ -1,0 +1,23 @@
+#editOverlay-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-areas: 'title title' 'labels boxes' 'confirm confirm';
+
+}
+
+#labels {
+    grid-area: labels;
+}
+
+#boxes {
+    grid-area: boxes;
+}
+
+#editOverlayTitle {
+    grid-area: title;
+}
+
+#confirm {
+    grid-area: confirm;
+}

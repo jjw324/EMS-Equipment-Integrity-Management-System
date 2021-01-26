@@ -1,0 +1,26 @@
+#createOverlay-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr .5fr auto 1fr;
+    grid-template-areas: 'title title' 'type type' 'labels boxes' 'confirm confirm';
+}
+
+#labels {
+    grid-area: labels;
+}
+
+#boxes {
+    grid-area: boxes;
+}
+
+#itemType {
+    grid-area: type;
+}
+
+#createOverlayTitle {
+    grid-area: title;
+}
+
+#confirm {
+    grid-area: confirm;
+}
