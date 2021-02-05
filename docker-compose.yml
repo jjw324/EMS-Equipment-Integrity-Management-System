@@ -1,0 +1,61 @@
+version: '2.2'
+services:
+    documentdb:
+      container_name: EMSEIMS-ddb
+      image: mongo
+      volumes: 
+        - ./documentdb:/data/db
+      ports: 
+        - 27017:27017
+      restart: unless-stopped
+      networks: 
+        - backend
+    relationaldb:
+      container_name: EMSEIMS-rdb
+      build: ./relationaldb
+      ports: 
+        - 3306:3306
+      networks: 
+        - backend
+      environment: 
+        - MYSQL_DATABASE=emseims
+        - MYSQL_ROOT_PASSWORD=pass
+      restart: always
+    api:
+      container_name: EMSEIMS-api
+      build: ./api
+      command: npm start
+      ports:
+        - 3001:3001
+      environment:
+        - API_PORT=3001
+        - DDBHOST=documentdb
+        - DDBPORT=27017
+        - RDBHOST=relationaldb
+        - RDBUSER=user
+        - RDBPASS=pass
+        - RDBDATA=emseims
+      depends_on:
+        - documentdb
+        - relationaldb
+      networks: 
+        - frontend
+        - backend
+    admin-app:
+      container_name: EMSEIMS-adminapp
+      build: ./admin-app
+      command: npm run serve
+      ports:
+        - 5000:5000
+      environment: 
+        - REACT_APP_API_URL=api
+      tty: true
+      depends_on:
+        - api
+      networks:
+        - frontend
+networks:
+    frontend:
+        driver: bridge
+    backend:
+        driver: bridge

@@ -6,8 +6,8 @@ import { TruckCheck, CallLog } from './CompletedForm';
 import InventoryUpdate from './InventoryUpdate';
 
 const RDBHOST = process.env.RDBHOST || 'localhost';
-const RDBUSER = process.env.RDBUSER || 'user';
-const RDBPASS = process.env.RDBPASS || 'password';
+const RDBUSER = process.env.RDBUSER || 'root';
+const RDBPASS = process.env.RDBPASS || 'pass';
 const RDBDATA = process.env.RDBDATA || 'database';
 
 const rdbConnection = new Sequelize(RDBDATA, RDBUSER, RDBPASS, {

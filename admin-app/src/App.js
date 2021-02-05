@@ -26,7 +26,6 @@ export default class App extends Component {
     this.handleModalClose = this.handleModalClose.bind(this);
     this.handleItemChange = this.handleItemChange.bind(this);
     this.handleExpand = this.handleExpand.bind(this);
-    this.handleGetTruckCheck = this.handleGetTruckCheck.bind(this);
 
   }
   /**

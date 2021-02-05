@@ -8,8 +8,8 @@ import { rdb } from './models';
 const server = express();
 
 // ENVIRIONMENT VARIABLES
-const PORT = process.env.PORT || 5000;
-const DDB_URL = process.env.DDB_URL || "mongodb://127.0.0.1:27017/emseims";
+const PORT = process.env.API_PORT || 5000;
+const DDB_URL = `mongodb://${process.env.DDBHOST}:${process.env.DDBPORT}/emseims` || "mongodb://127.0.0.1:27017/emseims";
 
 // MIDDLEWARES
 server.use(cors())
