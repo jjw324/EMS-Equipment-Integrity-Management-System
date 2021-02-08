@@ -13,6 +13,7 @@ export default class EditOverlay extends Component {
         super();
 
         this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleDelete = this.handleDelete.bind(this);
         this.handleExitClick = this.handleExitClick.bind(this);
         this.generateForm = this.generateForm.bind(this);
     }
@@ -37,7 +38,7 @@ export default class EditOverlay extends Component {
         if (changedRows.length === 0) {
             const res = window.confirm("No changes made. Is this correct?");
             if (res) {
-                this.props.handleClose(this.constructor.name);
+                this.props.handleClose("EditOverlay");
             }
             return;
         }
@@ -51,7 +52,7 @@ export default class EditOverlay extends Component {
                     : await axios.patch(`http://${process.env.REACT_APP_API_URL}/specialitem/${this.props.editingItem.serial_number}`, changedObj);
 
                 console.log(dbRes);
-                this.props.handleClose(this.constructor.name);
+                this.props.handleClose("EditOverlay");
             } catch (err) {
                 console.log(err);
                 window.alert("Unable to patch item to database. Please try again.");
@@ -72,7 +73,7 @@ export default class EditOverlay extends Component {
                     : await axios.delete(`http://${process.env.REACT_APP_API_URL}/specialitem/${this.props.editingItem.serial_number}`);
 
                 console.log(dbRes);
-                this.props.handleClose(this.constructor.name);
+                this.props.handleClose("EditOverlay");
             } catch (err) {
                 console.log(err);
                 window.alert("Unable to delete item from database. Please try again.");
@@ -95,7 +96,7 @@ export default class EditOverlay extends Component {
         res = (editMade) ? window.confirm("Are you sure you want to exit? Any edits will be lost.") : true;
 
         if (res) {
-            this.props.handleClose(this.constructor.name);
+            this.props.handleClose("EditOverlay");
         }
     }
 

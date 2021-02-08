@@ -34,7 +34,7 @@ export default class CreateOverlay extends Component {
 
         if(Object.keys(this.props.editingItem).length === 0) {
             const res = window.confirm("No changes made. Is this correct?");
-            if(res) this.props.handleClose(this.constructor.name);
+            if(res) this.props.handleClose("CreateOverlay");
             return;
         }
 
@@ -50,7 +50,7 @@ export default class CreateOverlay extends Component {
                     ? await axios.post(`http://${process.env.REACT_APP_API_URL}/item`, item)
                     : await axios.post(`http://${process.env.REACT_APP_API_URL}/specialitem`, item);
                 console.log(apiRes);
-                this.props.handleClose(this.constructor.name);
+                this.props.handleClose("CreateOverlay");
             } catch (err) {
                 window.alert("Unable to post item to database. Please try again.");
                 console.log(err);
@@ -68,7 +68,7 @@ export default class CreateOverlay extends Component {
             res = window.confirm("Are you sure you want to exit? Any edits will be lost.");
         else res = true;
 
-        if (res) this.props.handleClose(this.constructor.name);
+        if (res) this.props.handleClose("CreateOverlay");
     }
 
     /**

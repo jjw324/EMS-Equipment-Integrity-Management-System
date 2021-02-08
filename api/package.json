@@ -7,7 +7,7 @@
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
     "test": "",
     "start": "npm run build && node dist/server.js",
-    "dev": "nodemon server.js --exec babel-node --presets babel-preset-env"
+    "dev": "nodemon server.js --exec ./node_modules/.bin/babel-node src/index.js --presets babel-preset-env"
   },
   "repository": {
     "type": "git",

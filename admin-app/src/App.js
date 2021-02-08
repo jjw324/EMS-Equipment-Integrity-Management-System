@@ -94,6 +94,8 @@ export default class App extends Component {
     let allItems;
     try {
       allItems = (await axios.get(`http://${process.env.REACT_APP_API_URL}/check/allitems`)).data.results;
+	  console.log(allItems);
+	  console.log(process.env.REACT_APP_API_URL);
     } catch (err) {
       console.log("Unable to make database call. See Console for more info. Please reload to try again.");
       return;
@@ -126,6 +128,7 @@ export default class App extends Component {
    */
   handleModalClose(objName) {
     let modalName;
+	console.log(objName);
 
     if (objName === "EditOverlay") modalName = "showEditModal";
     else if (objName === "CreateOverlay") modalName = "showCreateModal";
